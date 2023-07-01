@@ -174,7 +174,9 @@ class AuthController extends Controller
     */
     public function authUserDetails()
     {
-        return Response(Auth::user(), 200);
+        return response([
+            'user' => Auth::user()
+        ]);
     }
 
 }
