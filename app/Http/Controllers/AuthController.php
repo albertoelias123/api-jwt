@@ -38,7 +38,7 @@ class AuthController extends Controller
 
         if (!$jwtToken) {
             return response([
-                'message' => 'The login credentials provided are invalid.',
+                'message' => __('The login credentials provided are invalid.'),
             ], 401);
         }
 
@@ -73,7 +73,7 @@ class AuthController extends Controller
         ]);
 
         return response([
-            'message' => 'User created successfully',
+            'message' => __('User created successfully'),
             'user' => $user
         ]);
     }
@@ -87,7 +87,7 @@ class AuthController extends Controller
     {
         Auth::logout();
         return response()->json([
-            'message' => 'User logged out successfully.',
+            'message' => __('User logged out successfully.'),
         ]);
     }
 
